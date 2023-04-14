@@ -1,7 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ProductRouting from './pages/product-routing/ProductRouting';
 // import ProductListing from './pages/product-listing/ProductListing';
-import ProductRouting from './pages/product-listing/ProductRouting';
+
 
 function App() {
   return (

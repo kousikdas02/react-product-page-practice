@@ -1,0 +1,22 @@
+.mySwiper2{
+    margin-bottom: 20px;
+.swiper-slide{
+    img{
+        object-fit: cover;
+        height: 400px;
+        border-radius: 20px;
+    }
+}
+}
+
+.swiper-thumbs{
+    max-width: 330px;
+    .swiper-slide{
+        cursor: pointer;
+        img{
+            object-fit: cover;
+            height: 60px;
+            width: 100%;
+        }
+    }
+}

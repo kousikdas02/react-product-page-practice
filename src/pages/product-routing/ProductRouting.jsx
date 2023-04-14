@@ -1,7 +1,9 @@
 import React from 'react'
 import { Route, BrowserRouter as Router, Routes, useParams } from 'react-router-dom'
-import ProductListing from './ProductListing'
-import ProductDetails from './ProductDetails'
+import ProductListing from '../product-listing/ProductListing'
+
+
+import ProductDetails from '../product-details/ProductDetails'
 import NotFound from './NotFound'
 
 const ProductRouting = () => {

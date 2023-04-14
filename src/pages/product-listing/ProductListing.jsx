@@ -2,12 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./ProductListing.scss";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProductListing = () => {
     const BaseUrl = "https://dummyjson.com";
     const [products, setProducts] = useState([]);
 
+    
     const getAllProducts = async () => {
         try {
             const response = await axios.get(`${BaseUrl}/products/`);
@@ -16,13 +17,13 @@ const ProductListing = () => {
             console.log("error", error);
         }
     };
-
+    
     useEffect(() => {
-        getAllProducts();
+        
+        getAllProducts()
     }, []);
 
     console.log(products);
-
 
     return (
         <>
@@ -34,16 +35,28 @@ const ProductListing = () => {
                         {products.map((productsData) => {
                             return (
                                 <>
-                                    <Col lg={4} className='mb-2' key={productsData.id}>
+                                    <Col
+                                        lg={4}
+                                        className='mb-2'
+                                        key={productsData.id}>
                                         <div className='product_card'>
                                             <div className='productThumbnail'>
-                                                <Link to={`products/${productsData.id}`}>
-                                                    <span><img src={productsData.thumbnail} alt="" /></span>
+                                                <Link
+                                                    to={`products/${productsData.id}`}>
+                                                    <span>
+                                                        <img
+                                                            src={
+                                                                productsData.thumbnail
+                                                            }
+                                                            alt=''
+                                                        />
+                                                    </span>
                                                 </Link>
                                             </div>
                                             <h5 className='product_title'>
-                                                Product Name:{" "}
-                                                {productsData?.title}
+                                                <Link to={`products/${productsData.id}`}>
+                                                    {productsData?.title}
+                                                </Link>
                                             </h5>
 
                                             {productsData.price > 1000 ? (
